@@ -96,6 +96,12 @@ fun main(args: Array<String>) {
     // class with constructor
     val c = Circle(10.0)
     println("\narea:${c.area()}")
+    println("perimeter:${c.perimeter()}")
+    println("\nTriangle side 3, 4, 5")
+    println("area:${Triangle.heron(3.0, 4.0, 5.0)}")
 
-    //
+    val q = Cubic(10.0)
+    println("\nsurface:${q.surface()}")
+    println("volume:${q.volume()}")
 }
+
