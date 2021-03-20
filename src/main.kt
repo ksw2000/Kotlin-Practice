@@ -103,5 +103,19 @@ fun main(args: Array<String>) {
     val q = Cubic(10.0)
     println("\nsurface:${q.surface()}")
     println("volume:${q.volume()}")
+
+    // data class
+    val maikichiBirthday: Date = Date(2005, 1, 30)
+
+    // All the data classes need to have one primary constructor
+    // and all the primary constructor should have at least one parameter.
+    // Whenever a class is marked as data, we can use some of the inbuilt
+    // function of that data lass such as "toString()", "hashCode()" ,etc.
+    // Any data class cannot have a modifier like abstract and open or internal.
+    // Data class can be extended to other classes too.
+
+    val maikichi: Person = Person("Maikichi", maikichiBirthday)
+    println(maikichi)
+    println(maikichi.hashCode())
 }
 
