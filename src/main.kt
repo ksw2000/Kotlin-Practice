@@ -101,21 +101,27 @@ fun main(args: Array<String>) {
     println("area:${Triangle.heron(3.0, 4.0, 5.0)}")
 
     val q = Cubic(10.0)
-    println("\nsurface:${q.surface()}")
-    println("volume:${q.volume()}")
+    println("\nsurface: ${q.surface()}")
+    println("volume: ${q.volume()}")
+    println("projection: ${q.orthogonalProjection()}")
 
     // data class
-    val maikichiBirthday: Date = Date(2005, 1, 30)
+    val maikichiBirthday = Date(2005, 1, 30)
 
     // All the data classes need to have one primary constructor
     // and all the primary constructor should have at least one parameter.
     // Whenever a class is marked as data, we can use some of the inbuilt
-    // function of that data lass such as "toString()", "hashCode()" ,etc.
+    // function of that data lass such as "toString()", "hashCode()", etc.
     // Any data class cannot have a modifier like abstract and open or internal.
     // Data class can be extended to other classes too.
 
-    val maikichi: Person = Person("Maikichi", maikichiBirthday)
-    println(maikichi)
-    println(maikichi.hashCode())
-}
+    val maikichi = Person("Maikichi", maikichiBirthday)
+    println("Maikichi's info: ${maikichi}")
+    println("hashcode: ${maikichi.hashCode()}")
+    println()
 
+    // delegated
+    val base = BaseImpl(10)
+    Derived(base).print()
+    println()
+}
