@@ -107,3 +107,31 @@ class Cubic(val side: Double): Geometry3D{
         return this.side*this.side*this.side
     }
 }
+
+// function extension
+// 有點類似 javascript 的 prototype chain
+fun Cubic.orthogonalProjection():Double {
+    return (this.edge*this.edge).toDouble()
+}
+
+/*
+* visibility
+* private, public, protected (same usage in Java)
+* internal:
+* If anything is marked as internal, then that specific field will be in
+* the internal field. An "internal package" is visible only inside the module
+* under which it is implemented.
+* modelA:
+* class Apple(){
+*   fun appleLog(){
+*       Log.i("debug=", "appleLog")
+*   }
+*   internal fun appleInternalLog(){
+*       Log.i("debug=", "appleInternalLog")
+*   }
+* }
+*
+* modelB:
+* Apple().appleLog()            // success
+* Apple().appleInternalLog()    // error
+* */
