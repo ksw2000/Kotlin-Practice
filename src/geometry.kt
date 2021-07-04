@@ -108,6 +108,24 @@ class Cubic(val side: Double): Geometry3D{
     }
 }
 
+class Sphere(val radius: Double) : Geometry3D{
+    override var vertex: Int= 0
+    override var edge: Int = 0
+    override var faces: Int = 0
+
+    init{
+        print("Init block");
+    }
+
+    override fun surface(): Double{
+        return 4*kotlin.math.PI*radius*radius
+    }
+
+    override fun volume(): Double{
+        return 4/3*kotlin.math.PI*radius*radius*radius
+    }
+}
+
 // function extension
 // 有點類似 javascript 的 prototype chain
 fun Cubic.orthogonalProjection():Double {
