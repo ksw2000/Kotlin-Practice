@@ -88,6 +88,7 @@ fun main(args: Array<String>) {
     println()
 
     // class
+    // kotlin do not need `new` to create an instance of a class like Dart, Python
     val r = Rectangle()
     r.setWidth(10)
     r.setLength(20)
@@ -118,10 +119,43 @@ fun main(args: Array<String>) {
     val maikichi = Person("Maikichi", maikichiBirthday)
     println("Maikichi's info: ${maikichi}")
     println("hashcode: ${maikichi.hashCode()}")
+
+    // Kotlin allows you to declare multiple variables at once
+    val (name, birthday) = maikichi
+    println("name: $name, birthday: $birthday")
     println()
 
     // delegated
     val base = BaseImpl(10)
     Derived(base).print()
     println()
+
+    // lambda function
+    val hello = {
+        println("GeeksforGeeks")
+    }
+    // there are two methods for calling hello
+    hello()
+    hello.invoke()
+
+    // with type annotation in lambda expression
+    val add = {
+        a:Int, b:Int -> a+b
+    }
+    println("10+20=${add(10, 20)}")
+
+    // without type annotation in lambda expression
+    val add2: (Int, Int)->Int = {
+        a, b -> a+b
+    }
+    println("30+40=${add2(30, 40)}")
+
+    // anonymous function
+    val add3 = fun(a: Int, b: Int): Int{
+        return a+b
+    }
+    println("50+60=${add3(50, 60)}")
+
+    val add4 = fun(a: Int, b: Int): Int = a+b
+    println("70+80=${add4(70, 80)}")
 }
