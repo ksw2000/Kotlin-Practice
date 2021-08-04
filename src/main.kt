@@ -18,6 +18,11 @@ fun main(args: Array<String>) {
     val letter: Char = 'A'
     println("$letter")
 
+    // Unlike Java, you cannot use ASCII values to display certain characters. 
+    // The value 66 would output a "B" in Java, but will generate an error in Kotlin:
+    // var letter: Char = 66
+    // Error
+
     // Boolean
     // var: a mutable variable
     var flag: Boolean = true
